@@ -1,0 +1,9 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: bonkify
+spec:
+  to:
+    kind: Service
+    name: bonkify

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bonkify
+spec:
+  selector:
+    matchLabels:
+      app: bonkify
+  template:
+    metadata:
+      labels:
+        app: bonkify
+    spec:
+      containers:
+        - name: bonkify
+          image: quay.io/gmfrasca/bonkify:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+              name: http
+          resources:
+            requests:
+              cpu: 100m
+              memory: 800Mi 
